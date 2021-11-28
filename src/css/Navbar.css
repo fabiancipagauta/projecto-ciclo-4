@@ -1,10 +1,8 @@
 .sidebar {
   position: fixed;
-  left: 0;
+  left: -500px;
   top: 0;
   background-color: #6777ef;
-  max-width: 25%;
-  min-width: 150px;
   min-height: 100vh;
   box-shadow: 0 0 10px #aaa;
 }
@@ -14,10 +12,12 @@
   min-height: 50px;
   width: 100%;
   text-align: left;
+  display: flex;
+  align-items: center;
 }
 .sidebar-logo a {
   padding-left: 0.5rem;
-  font-size: 2rem;
+  font-size: 0.9rem;
   color: #fff;
   text-decoration: none;
 }
@@ -44,9 +44,11 @@
   text-decoration: none;
   color: #fff;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   align-content: space-between;
+  text-align: center;
 }
 
 .sidebar-menu-icon {
@@ -55,10 +57,41 @@
 }
 
 .sidebar-menu-title {
-  min-width: 80px;
-  font-size: 0.8rem;
+  width: 0px;
+  font-size: 0rem;
+  text-align: center;
 }
 
 .sidebar-menu-element:hover {
   background-color: rgba(255, 255, 255, 0.501);
+}
+.sidebar.show {
+  left: 0;
+  width: 15%;
+}
+
+/*Pantallas desde 900px en adelante*/
+@media screen and (min-width: 900px) {
+  .sidebar {
+    left: 0;
+    width: 15%;
+  }
+}
+/*Pantallas desde 700px en adelante*/
+@media screen and (min-width: 700px) {
+  .sidebar-menu-link {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-between;
+  }
+  .sidebar-menu-title {
+    min-width: 80px;
+    font-size: 0.8rem;
+    text-align: left;
+  }
+  .sidebar-menu-icon {
+    width: 20px;
+    height: 20px;
+  }
 }

@@ -5,6 +5,8 @@ import vacaciones from './vacations.svg';
 import pagos from './pagos.svg';
 import certificados from './certificado.svg';
 import permisos from './permisos.svg';
+import hamburguerMenu from './hamburger-menu.svg';
+import userProfile from './user-profile.svg';
 
 export const sidebarIMG = {
   profile: {
@@ -32,4 +34,19 @@ export const sidebarIMG = {
 export const adminIcon = {
   img: adminSection,
   title: 'Administrador icon',
+};
+
+export const headerIcons = {
+  hamburguerMenu: {
+    img: hamburguerMenu,
+    title: 'Hamburguer menu icon',
+  },
+  userProfile: {
+    img: userProfile,
+    title: 'Usuario icon',
+  },
+  btnExit: {
+    img: btnExit,
+    title: 'Boton salir',
+  },
 };
