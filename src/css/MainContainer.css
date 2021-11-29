@@ -1,0 +1,9 @@
+.main-container {
+  width: 95%;
+  min-height: 80vh;
+  margin: 1rem auto;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 10px #ccc;
+  border-radius: 5px;
+  overflow-y: auto;
+}

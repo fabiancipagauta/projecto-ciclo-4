@@ -1,0 +1,10 @@
+.header-main {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 95%;
+}
+.section-title {
+  text-align: left;
+  color: #333;
+}

@@ -2,6 +2,7 @@ import React, { useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import SidebarElement from './SidebarElement';
+import AdminMenu from './AdminMenu';
 
 import { sidebarLinkElements, adminLinksElements } from '../../helpers/sidebarElements';
 import '../../css/Navbar.css';
@@ -35,17 +36,13 @@ const Sidebar = () => {
 
         {/* Solo se debe mostrar si el empleado es admin o de nomina */}
         {(user.tipo_usuario === '1' || user.tipo_usuario === '2') && (
-          <li className="sidebar-menu-element" data-type="btn-collapse" onClick={handleCollapse}>
-            <span to="/psn" className="sidebar-menu-link">
-              <img src={adminIcon.img} alt={adminIcon.title} className="sidebar-menu-icon" />
-              <span className="sidebar-menu-title">Admin Section</span>
-            </span>
-            <ul className="sidebar-menu-element-collapse collapse-2" ref={collapseRef}>
-              {adminLinksElements.map((element) => (
-                <SidebarElement key={element.id} {...element} />
-              ))}
-            </ul>
-          </li>
+          <AdminMenu
+            sectionName="Seccion Admin."
+            icon={adminIcon}
+            links={adminLinksElements}
+            handleCollapse={handleCollapse}
+            collapseRef={collapseRef}
+          />
         )}
       </ul>
     </nav>

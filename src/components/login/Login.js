@@ -6,7 +6,7 @@ import useForm from '../../hooks/useForm';
 import { getUser } from '../../helpers/getUsuario';
 import { types } from '../../helpers/types';
 
-export const Login = () => {
+const Login = () => {
   const { dispatch } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -97,3 +97,5 @@ export const Login = () => {
     </div>
   );
 };
+
+export default Login;
