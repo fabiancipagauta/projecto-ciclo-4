@@ -1,0 +1,32 @@
+{
+  "usuarios":[
+    {
+      "nombre": "Luis",
+      "apellido": "Garcia",
+      "id": "123",
+      "tipo_usuario":"1",
+      "email": "luis@correo.com",
+      "password": "123",
+      "token": "EstoDeberiaEstarCifradoYSerUnico"
+    },
+    {
+      "nombre": "Andrea",
+      "apellido": "Lopez",
+      "id": "456",
+      "tipo_usuario":"2",
+      "email": "andrea@correo.com",
+      "password": "123",
+      "token": "EstoDeberiaEstarCifradoYSerUnico"
+    },
+    {
+      "nombre": "Wilson",
+      "apellido": "Fernandez",
+      "id": "789",
+      "tipo_usuario":"3",
+      "email": "wilson@correo.com",
+      "password": "123",
+      "token": "EstoDeberiaEstarCifradoYSerUnico"
+    }
+
+  ]
+}

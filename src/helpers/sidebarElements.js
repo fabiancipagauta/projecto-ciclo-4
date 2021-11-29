@@ -1,4 +1,4 @@
-import { sidebarIMG } from '../assets/img/images';
+import { sidebarIMG, adminSectionMenu } from '../assets/img/images';
 
 export const sidebarLinkElements = [
   {
@@ -33,4 +33,35 @@ export const sidebarLinkElements = [
   },
 ];
 
-export const adminLinksElements = [];
+export const adminLinksElements = [
+  {
+    id: 'admin-link-01',
+    img: adminSectionMenu.gestionUsuario,
+    path: '/',
+    title: 'Gestion usuarios',
+  },
+  {
+    id: 'admin-link-02',
+    img: adminSectionMenu.gestionPermisos,
+    path: '/',
+    title: 'Gestion permisos',
+  },
+  {
+    id: 'admin-link-03',
+    img: adminSectionMenu.gestionVacaciones,
+    path: '/',
+    title: 'Gestion vacaciones',
+  },
+  {
+    id: 'admin-link-04',
+    img: adminSectionMenu.reportes,
+    path: '/',
+    title: 'Reportes',
+  },
+  {
+    id: 'admin-link-05',
+    img: adminSectionMenu.dashboard,
+    path: '/',
+    title: 'Dashboard',
+  },
+];

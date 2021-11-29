@@ -1,10 +1,32 @@
+import { useEffect, useReducer } from 'react';
 import './App.css';
+import { AuthContext } from './auth/authContext';
+import { authReducer } from './auth/authReducer';
 import AppRouter from './routers/AppRouter';
 
+const init = () => {
+  return JSON.parse(localStorage.getItem('user_psn')) || { loged: false };
+};
+
 function App() {
+  const [user, dispatch] = useReducer(authReducer, '', init);
+
+  useEffect(() => {
+    if (!user) return;
+
+    localStorage.setItem('user_psn', JSON.stringify(user));
+  }, [user]);
+
   return (
     <div className="App">
-      <AppRouter />
+      <AuthContext.Provider
+        value={{
+          user,
+          dispatch,
+        }}
+      >
+        <AppRouter />
+      </AuthContext.Provider>
     </div>
   );
 }

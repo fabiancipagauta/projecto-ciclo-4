@@ -1,8 +1,9 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Sidebar from '../components/sidebar/Sidebar';
 import Header from '../components/header/Header';
+import BienvenidoPage from '../views/BienvenidoPage';
 import PerfilPage from '../views/PerfilPage';
 import VacacionesPage from '../views/VacacionesPage';
 import PagosPage from '../views/PagosPage';
@@ -11,7 +12,6 @@ import PermisosPage from '../views/PermisosPage';
 import Page404 from '../views/Page404';
 
 import '../css/PsnRoutes.css';
-import BienvenidoPage from '../views/BienvenidoPage';
 
 const PsnRoutes = () => {
   return (

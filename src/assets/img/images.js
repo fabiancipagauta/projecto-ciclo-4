@@ -7,6 +7,11 @@ import certificados from './certificado.svg';
 import permisos from './permisos.svg';
 import hamburguerMenu from './hamburger-menu.svg';
 import userProfile from './user-profile.svg';
+import gestionUsuario from './gestion-usuario.svg';
+import gestionPermisos from './gestion-permisos.svg';
+import gestionVacaciones from './gestion-vacaciones.svg';
+import reportes from './reportes.svg';
+import dashboard from './dashboard.svg';
 
 export const sidebarIMG = {
   profile: {
@@ -34,6 +39,29 @@ export const sidebarIMG = {
 export const adminIcon = {
   img: adminSection,
   title: 'Administrador icon',
+};
+
+export const adminSectionMenu = {
+  gestionUsuario: {
+    img: gestionUsuario,
+    title: 'Gestion usuario icon',
+  },
+  gestionPermisos: {
+    img: gestionPermisos,
+    title: 'Gestion Permisos icon',
+  },
+  gestionVacaciones: {
+    img: gestionVacaciones,
+    title: 'Gestion vacaciones icon',
+  },
+  reportes: {
+    img: reportes,
+    title: 'Reportes icon',
+  },
+  dashboard: {
+    img: dashboard,
+    title: 'Dashboard icon',
+  },
 };
 
 export const headerIcons = {
