@@ -4,31 +4,33 @@ export const sidebarLinkElements = [
   {
     id: 'sidebar-id-01',
     img: sidebarIMG.profile,
-    path: '',
+    path: 'perfil',
     title: 'Perfil',
   },
   {
     id: 'sidebar-id-02',
     img: sidebarIMG.vacaciones,
-    path: '',
+    path: 'vacaciones',
     title: 'Vacaciones',
   },
   {
     id: 'sidebar-id-03',
     img: sidebarIMG.pagos,
-    path: '',
+    path: 'pagos',
     title: 'Pagos',
   },
   {
     id: 'sidebar-id-04',
     img: sidebarIMG.certificados,
-    path: '',
+    path: 'certificado',
     title: 'Certificado',
   },
   {
     id: 'sidebar-id-05',
     img: sidebarIMG.permisos,
-    path: '',
+    path: 'permisos',
     title: 'Permisos',
   },
 ];
+
+export const adminLinksElements = [];

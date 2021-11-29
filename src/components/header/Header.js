@@ -10,6 +10,7 @@ const Header = () => {
   const handleSidebar = (e) => {
     console.log('click');
     document.querySelector('.sidebar').classList.toggle('show');
+    document.querySelector('.psn-main').classList.toggle('show');
     headerRef.current.classList.toggle('show');
   };
 

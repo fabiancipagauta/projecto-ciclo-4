@@ -25,11 +25,17 @@ const Sidebar = () => {
         ))}
 
         {/* Solo se debe mostrar si el empleado es admin o de nomina */}
-        <li className="sidebar-menu-element">
+        <li className="sidebar-menu-element" data-type="btn-collapse">
           <span to="/psn" className="sidebar-menu-link">
             <img src={adminIcon.img} alt={adminIcon.title} className="sidebar-menu-icon" />
             <span className="sidebar-menu-title">Admin Section</span>
           </span>
+          <ul className="collapse">
+            <li>Hola</li>
+            <li>Hola</li>
+            <li>Hola</li>
+            <li>Hola</li>
+          </ul>
         </li>
       </ul>
     </nav>
