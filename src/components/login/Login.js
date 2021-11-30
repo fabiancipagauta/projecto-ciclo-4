@@ -49,10 +49,11 @@ const Login = () => {
       <form
         action=""
         // onSubmit={handleSubmit}
-        className="col-sm-10 col-md-6 mx-auto p-4 shadow rounded"
+        className="col-sm-10 col-md-6 mx-auto p-4 shadow rounded form-login"
         onSubmit={handleLogin}
       >
         <h2 className="mb-4 text-center">Iniciar sesión</h2>
+
         <div className="row mb-3">
           <label htmlFor="email" className="col-sm-2 col-form-label">
             Email

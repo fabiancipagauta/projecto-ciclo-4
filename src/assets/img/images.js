@@ -12,6 +12,8 @@ import gestionPermisos from './gestion-permisos.svg';
 import gestionVacaciones from './gestion-vacaciones.svg';
 import reportes from './reportes.svg';
 import dashboard from './dashboard.svg';
+import loginImage from './login-image.svg';
+import error_404 from './error-404.svg';
 
 export const sidebarIMG = {
   profile: {
@@ -77,4 +79,14 @@ export const headerIcons = {
     img: btnExit,
     title: 'Boton salir',
   },
+};
+
+export const loginImg = {
+  img: loginImage,
+  title: 'Imagen Login',
+};
+
+export const error404 = {
+  img: error_404,
+  title: 'Error 404 imagen',
 };

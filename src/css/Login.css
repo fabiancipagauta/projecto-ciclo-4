@@ -1,0 +1,24 @@
+.login-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -100;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('../assets/img/login-image.svg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 90%;
+  background-size: 300px;
+}
+
+.form-login {
+  background-color: #fff;
+}
+
+@media screen and (min-width: 700px) {
+  .login-container {
+    background-position: 5% 90%;
+    background-size: 600px;
+  }
+}
