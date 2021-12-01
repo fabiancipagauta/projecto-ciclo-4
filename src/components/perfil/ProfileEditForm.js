@@ -1,15 +1,16 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../auth/authContext';
+import { ProfileUserContext } from '../../context/ProfileUserContext';
 import '../../css/ProfileEditForm.css';
 import useForm from '../../hooks/useForm';
 
 const ProfileEditForm = ({ setShowEdit }) => {
-  const { user } = useContext(AuthContext);
+  const { userInfo } = useContext(ProfileUserContext);
 
   const initFormEdit = {
-    email: user.email,
-    direccion: user.direccion,
-    telefono: user.telefono,
+    email: userInfo.email,
+    direccion: userInfo.direccion,
+    telefono: userInfo.telefono,
   };
 
   const [form, handleInputChange] = useForm(initFormEdit);

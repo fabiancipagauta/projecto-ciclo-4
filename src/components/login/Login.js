@@ -31,7 +31,12 @@ const Login = () => {
       const action = {
         type: types.login,
         payload: {
-          ...user,
+          nombre: user.nombre,
+          apellido: user.apellido,
+          id: user.id,
+          token: user.token,
+          correo: user.correo,
+          tipo_usuario: user.tipo_usuario,
         },
       };
       // console.log(action);
@@ -79,19 +84,19 @@ const Login = () => {
             Password
           </label>
           <div className="col-sm-12">
-          <div className="input-group">
+            <div className="input-group">
               <div className="input-group-text">🔐</div>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              onChange={handleInputChange}
-              value={form.password}
-              className="form-control"
-              placeholder="Ingrese su Contraseña"
-            />
+              <input
+                type="password"
+                name="password"
+                id="password"
+                onChange={handleInputChange}
+                value={form.password}
+                className="form-control"
+                placeholder="Ingrese su Contraseña"
+              />
+            </div>
           </div>
-        </div>
         </div>
         <div>
           <input type="submit" value="Iniciar sesión" className="btn btn-primary" />
