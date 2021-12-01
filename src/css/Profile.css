@@ -1,0 +1,46 @@
+.profile-img {
+  box-sizing: border-box;
+  padding: 0.5rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.profile-img img {
+  width: 150px;
+  height: auto;
+}
+
+.profile-info {
+  position: relative;
+}
+.profile-info h4 {
+  margin-bottom: 1rem;
+}
+.profile-info .user-info {
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: thin solid #ccc;
+}
+.user-info-tag {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/*MEDIA*/
+@media screen and (min-width: 700px) {
+  .profile-img img {
+    width: 200px;
+  }
+  .profile-info {
+    margin-top: 0;
+  }
+  .profile-info .user-info {
+    font-size: 1rem;
+  }
+  .btn-edit-profile {
+    position: absolute;
+    right: 10px;
+  }
+}

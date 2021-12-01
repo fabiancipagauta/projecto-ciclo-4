@@ -16,7 +16,7 @@ const Header = () => {
   const { btnExit, btnMenu, userImg } = headerImg;
 
   const handleSidebar = (e) => {
-    console.log('click');
+    // console.log('click');
     document.querySelector('.sidebar').classList.toggle('show');
     document.querySelector('.psn-main').classList.toggle('show');
     headerRef.current.classList.toggle('show');

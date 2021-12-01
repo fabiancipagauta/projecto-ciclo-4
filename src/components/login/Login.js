@@ -11,7 +11,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const [form, handleInputChange, resetForm] = useForm({
+  const [form, handleInputChange] = useForm({
     email: '',
     password: '',
   });
@@ -25,7 +25,7 @@ const Login = () => {
     }
 
     const user = getUser(form.email, form.password);
-    console.log(user);
+    // console.log(user);
 
     if (user.founded) {
       const action = {
@@ -34,7 +34,7 @@ const Login = () => {
           ...user,
         },
       };
-      console.log(action);
+      // console.log(action);
       dispatch(action);
 
       navigate('/psn', { replace: true });
