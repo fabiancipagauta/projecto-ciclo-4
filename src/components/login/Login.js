@@ -60,7 +60,7 @@ const Login = () => {
           </label>
           <div className="col-sm-12">
             <div className="input-group">
-              <div className="input-group-text">@</div>
+              <div className="input-group-text">📧</div>
               <input
                 type="email"
                 name="email"
@@ -79,6 +79,8 @@ const Login = () => {
             Password
           </label>
           <div className="col-sm-12">
+          <div className="input-group">
+              <div className="input-group-text">🔐</div>
             <input
               type="password"
               name="password"
@@ -90,7 +92,7 @@ const Login = () => {
             />
           </div>
         </div>
-
+        </div>
         <div>
           <input type="submit" value="Iniciar sesión" className="btn btn-primary" />
         </div>
