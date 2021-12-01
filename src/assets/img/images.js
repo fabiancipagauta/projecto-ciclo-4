@@ -14,6 +14,7 @@ import reportes from './reportes.svg';
 import dashboard from './dashboard.svg';
 import loginImage from './login-image.svg';
 import error_404 from './error-404.svg';
+import profile_user from './profile-user.svg';
 
 export const sidebarIMG = {
   profile: {
@@ -89,4 +90,9 @@ export const loginImg = {
 export const error404 = {
   img: error_404,
   title: 'Error 404 imagen',
+};
+
+export const profileUser = {
+  img: profile_user,
+  title: 'Perfil de usuario img',
 };
