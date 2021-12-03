@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { AuthContext } from '../auth/authContext';
 import { getProfileInfo } from '../helpers/getProfileInfo';
+import { setProfileUser } from '../helpers/setProfileUSer';
 
 export const ProfileUserContext = createContext();
 
@@ -15,7 +16,13 @@ export const ProfileUserProvider = ({ children }) => {
     setUserInfo(getInfo);
   }, []);
 
-  const data = { userInfo, setUserInfo };
+  const editUser = (userEdit) => {
+    //console.log(userEdit);
+    let newUSer = setProfileUser(userEdit);
+    setUserInfo(newUSer);
+  };
+
+  const data = { userInfo, editUser };
 
   return <ProfileUserContext.Provider value={data}>{children}</ProfileUserContext.Provider>;
 };

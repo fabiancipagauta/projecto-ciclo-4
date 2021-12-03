@@ -1,13 +1,13 @@
-import { types } from '../helpers/types';
+import { AUTH_TYPES } from '../types/authTypes';
 
 export const authReducer = (state = {}, action) => {
   switch (action.type) {
-    case types.login:
+    case AUTH_TYPES.LOGIN:
       return {
         ...action.payload,
         loged_token: true,
       };
-    case types.logout:
+    case AUTH_TYPES.LOGOUT:
       return {
         loged_token: false,
       };

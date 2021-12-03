@@ -5,10 +5,9 @@ import '../../css/ProfileEditForm.css';
 import useForm from '../../hooks/useForm';
 
 const ProfileEditForm = ({ setShowEdit }) => {
-  const { userInfo } = useContext(ProfileUserContext);
+  const { userInfo, editUser } = useContext(ProfileUserContext);
 
   const initFormEdit = {
-    email: userInfo.email,
     direccion: userInfo.direccion,
     telefono: userInfo.telefono,
   };
@@ -21,6 +20,11 @@ const ProfileEditForm = ({ setShowEdit }) => {
       alert('Campos requeridos');
       return;
     }
+
+    editUser({
+      ...userInfo,
+      ...form,
+    });
   };
 
   return (

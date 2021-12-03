@@ -1,11 +1,9 @@
-import data_user from '../data/data_user.json';
+import { usuarios } from '../data/data_user';
 
 export const getUser = (email, password) => {
   // console.log('get_usuario');
 
-  let user = data_user.usuarios.filter(
-    (usuario) => usuario.email === email && usuario.password === password
-  );
+  let user = usuarios.filter((usuario) => usuario.email === email && usuario.password === password);
 
   user = { ...user[0] };
 

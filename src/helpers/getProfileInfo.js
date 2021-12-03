@@ -1,7 +1,7 @@
-import data_user from '../data/data_user.json';
+import { usuarios } from '../data/data_user';
 
 export const getProfileInfo = (id) => {
-  let user = data_user.usuarios.find((u) => u.id === id);
+  let user = usuarios.find((u) => u.id === id);
 
   console.log(user);
 

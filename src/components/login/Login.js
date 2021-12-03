@@ -4,7 +4,7 @@ import { AuthContext } from '../../auth/authContext';
 import useForm from '../../hooks/useForm';
 
 import { getUser } from '../../helpers/getUsuario';
-import { types } from '../../helpers/types';
+import { AUTH_TYPES } from '../../types/authTypes';
 
 const Login = () => {
   const { dispatch } = useContext(AuthContext);
@@ -29,7 +29,7 @@ const Login = () => {
 
     if (user.founded) {
       const action = {
-        type: types.login,
+        type: AUTH_TYPES.LOGIN,
         payload: {
           nombre: user.nombre,
           apellido: user.apellido,

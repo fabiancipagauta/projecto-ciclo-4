@@ -2,7 +2,7 @@ import React, { useContext, useRef } from 'react';
 import { AuthContext } from '../../auth/authContext';
 import { useNavigate } from 'react-router';
 
-import { types } from '../../helpers/types';
+import { AUTH_TYPES } from '../../types/authTypes';
 import { headerImg } from '../../helpers/headerElements';
 import '../../css/Header.css';
 
@@ -24,7 +24,7 @@ const Header = () => {
 
   const handleLogout = (e) => {
     const action = {
-      type: types.logout,
+      type: AUTH_TYPES.LOGOUT,
     };
 
     dispatch(action);
