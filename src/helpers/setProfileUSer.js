@@ -1,16 +1,18 @@
-import { usuarios } from '../data/data_user';
+import env from '../constants/apiConst';
 
 export const setProfileUser = (user) => {
-  console.log(user);
+  let options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ user }),
+  };
 
-  let i = 0;
+  const data = fetch(env.__PROFILE, options)
+    .then((res) => res)
+    .then((res) => res.json());
+  console.log(data);
 
-  for (let us of usuarios) {
-    if (us.id === user.id) {
-      usuarios[i] = user;
-      return user;
-    }
-    i++;
-  }
-  return user;
+  return data;
 };

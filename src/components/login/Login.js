@@ -16,7 +16,7 @@ const Login = () => {
     password: '',
   });
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
     if (!form.email.trim() || !form.password.trim()) {
@@ -24,28 +24,35 @@ const Login = () => {
       return;
     }
 
-    const user = getUser(form.email, form.password);
-    // console.log(user);
+    //Hacemos la peticion
+    try {
+      let res = await getUser(form.email, form.password);
 
-    if (user.founded) {
-      const action = {
-        type: AUTH_TYPES.LOGIN,
-        payload: {
-          nombre: user.nombre,
-          apellido: user.apellido,
-          id: user.id,
-          token: user.token,
-          correo: user.correo,
-          tipo_usuario: user.tipo_usuario,
-        },
-      };
-      // console.log(action);
-      dispatch(action);
+      let data = await res.json();
+      // console.log(data);
 
-      navigate('/psn', { replace: true });
-    } else {
-      alert('Correo o password incorrectos');
-      return;
+      if (data.user) {
+        const action = {
+          type: AUTH_TYPES.LOGIN,
+          payload: {
+            nombre: data.user.nombre,
+            apellido: data.user.apellido,
+            id: data.user.id,
+            token: data.user.token,
+            email: data.user.email,
+            tipo_usuario: data.user.tipo_usuario,
+          },
+        };
+        // console.log(action);
+        dispatch(action);
+
+        navigate('/psn', { replace: true });
+      } else {
+        alert(data.msg);
+        return;
+      }
+    } catch (error) {
+      alert(error);
     }
   };
 

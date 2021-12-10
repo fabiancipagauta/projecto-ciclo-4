@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../../auth/authContext';
 import { ProfileUserContext } from '../../context/ProfileUserContext';
 import '../../css/ProfileEditForm.css';
+import { editUserApi } from '../../helpers/editUserApi';
 import useForm from '../../hooks/useForm';
 
 const ProfileEditForm = ({ setShowEdit }) => {
-  const { userInfo, editUser } = useContext(ProfileUserContext);
+  const { userInfo } = useContext(ProfileUserContext);
 
   const initFormEdit = {
     direccion: userInfo.direccion,
@@ -14,17 +14,21 @@ const ProfileEditForm = ({ setShowEdit }) => {
 
   const [form, handleInputChange] = useForm(initFormEdit);
 
-  const handleSubmitEdit = (e) => {
+  const handleSubmitEdit = async (e) => {
     e.preventDefault();
     if (!form.direccion.trim() || !form.telefono.trim()) {
       alert('Campos requeridos');
       return;
     }
 
-    editUser({
-      ...userInfo,
-      ...form,
-    });
+    try {
+      let res = await editUserApi(userInfo.id, form.direccion, form.telefono);
+      let data = await res.json();
+      // console.log(data);
+      window.location.reload();
+    } catch (error) {
+      alert(error);
+    }
   };
 
   return (

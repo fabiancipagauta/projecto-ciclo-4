@@ -12,9 +12,7 @@ const PerfilPage = () => {
   return (
     <div>
       <ProfileUserProvider>
-        <HeaderMain sectionTitle="Mi Perfil">
-          <h4>Botones opcionales</h4>
-        </HeaderMain>
+        <HeaderMain sectionTitle="Mi Perfil"></HeaderMain>
         <MainContainer>
           <Profile setShowEdit={setShowEdit} />
           {showEdit && <ProfileEditForm setShowEdit={setShowEdit} />}

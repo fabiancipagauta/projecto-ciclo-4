@@ -1,17 +1,19 @@
-import { usuarios } from '../data/data_user';
+import env from '../constants/apiConst';
 
-export const getUser = (email, password) => {
-  // console.log('get_usuario');
+/**
+ * PETICION PARA INICIAR SESION
+ */
 
-  let user = usuarios.filter((usuario) => usuario.email === email && usuario.password === password);
+export const getUser = async (email, password) => {
+  let options = {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({ email: email, password: password }),
+  };
 
-  user = { ...user[0] };
+  let data = fetch(env.__LOGIN, options).then((res) => res);
 
-  if (user.hasOwnProperty('email')) {
-    user.founded = true;
-  } else {
-    user.founded = false;
-  }
-
-  return user;
+  return data;
 };

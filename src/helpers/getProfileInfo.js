@@ -1,13 +1,17 @@
-import { usuarios } from '../data/data_user';
+import env from '../constants/apiConst';
 
-export const getProfileInfo = (id) => {
-  let user = usuarios.find((u) => u.id === id);
+/**
+ * OBTENEMOS LA INFORMACION DEL USUARIO
+ */
 
-  console.log(user);
+export const getProfileInfo = async (user) => {
+  let options = {
+    method: 'GET',
+  };
 
-  if (!user) {
-    return {};
-  } else {
-    return user;
-  }
+  const data = await fetch(`${env.__PROFILE}${user}`, options);
+
+  let json = await data.json();
+
+  return json.user;
 };
