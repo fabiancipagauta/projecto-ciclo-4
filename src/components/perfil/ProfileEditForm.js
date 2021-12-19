@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ProfileUserContext } from '../../context/ProfileUserContext';
 import '../../css/ProfileEditForm.css';
-import { editUserApi } from '../../helpers/editUserApi';
+import { __editProfile } from '../../helpers/__editProfile';
 import useForm from '../../hooks/useForm';
 
 const ProfileEditForm = ({ setShowEdit }) => {
@@ -16,15 +16,16 @@ const ProfileEditForm = ({ setShowEdit }) => {
 
   const handleSubmitEdit = async (e) => {
     e.preventDefault();
-    if (!form.direccion.trim() || !form.telefono.trim()) {
+    if (!form.direccion.trim()) {
       alert('Campos requeridos');
       return;
     }
+    console.log(userInfo._id);
 
     try {
-      let res = await editUserApi(userInfo.id, form.direccion, form.telefono);
+      let res = await __editProfile(userInfo._id, form.direccion, form.telefono);
       let data = await res.json();
-      // console.log(data);
+      console.log(data);
       window.location.reload();
     } catch (error) {
       alert(error);

@@ -4,7 +4,7 @@ import env from '../constants/apiConst';
  * OBTENEMOS LA INFORMACION DEL USUARIO
  */
 
-export const getProfileInfo = async (user) => {
+export const __ProfileInfo = async (user) => {
   let options = {
     method: 'GET',
   };
@@ -13,5 +13,5 @@ export const getProfileInfo = async (user) => {
 
   let json = await data.json();
 
-  return json.user;
+  return json;
 };

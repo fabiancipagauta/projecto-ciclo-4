@@ -35,7 +35,7 @@ const Sidebar = () => {
         ))}
 
         {/* Solo se debe mostrar si el empleado es admin o de nomina */}
-        {(user.tipo_usuario === '1' || user.tipo_usuario === '2') && (
+        {(user.tipo_usuario === 1 || user.tipo_usuario === 2) && (
           <AdminMenu
             sectionName="Seccion Admin."
             icon={adminIcon}

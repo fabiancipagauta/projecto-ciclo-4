@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router';
 import { AuthContext } from '../../auth/authContext';
 import useForm from '../../hooks/useForm';
 
-import { getUser } from '../../helpers/getUsuario';
 import { AUTH_TYPES } from '../../types/authTypes';
+import { __fetchLogin } from '../../helpers/__fetchLogin';
 
 const Login = () => {
   const { dispatch } = useContext(AuthContext);
@@ -26,21 +26,20 @@ const Login = () => {
 
     //Hacemos la peticion
     try {
-      let res = await getUser(form.email, form.password);
+      let res = await __fetchLogin(form.email, form.password);
 
       let data = await res.json();
-      // console.log(data);
 
-      if (data.user) {
+      if (data.status === 200) {
         const action = {
           type: AUTH_TYPES.LOGIN,
           payload: {
-            nombre: data.user.nombre,
-            apellido: data.user.apellido,
-            id: data.user.id,
-            token: data.user.token,
-            email: data.user.email,
-            tipo_usuario: data.user.tipo_usuario,
+            nombre: data.data.nombre,
+            apellido: data.data.apellido,
+            id: data.data._id,
+            token: data.token,
+            email: data.data.email,
+            tipo_usuario: data.data.tipo_usuario,
           },
         };
         // console.log(action);

@@ -1,6 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { AuthContext } from '../auth/authContext';
-import { getProfileInfo } from '../helpers/getProfileInfo';
+import { createContext, useState } from 'react';
 
 export const ProfileUserContext = createContext();
 /**
@@ -10,18 +8,7 @@ export const ProfileUserContext = createContext();
 export const ProfileUserProvider = ({ children }) => {
   const [userInfo, setUserInfo] = useState({});
 
-  const { user } = useContext(AuthContext);
-
-  let getInfo = useMemo(async () => await getProfileInfo(user.email), [user.email]);
-
-  useEffect(() => {
-    const set = async () => {
-      setUserInfo(await getInfo);
-    };
-    set();
-  }, []);
-
-  const data = { userInfo };
+  const data = { userInfo, setUserInfo };
 
   return <ProfileUserContext.Provider value={data}>{children}</ProfileUserContext.Provider>;
 };

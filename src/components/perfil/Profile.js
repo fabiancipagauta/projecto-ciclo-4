@@ -1,11 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { profileUser } from '../../assets/img/images';
+import { AuthContext } from '../../auth/authContext';
 import { ProfileUserContext } from '../../context/ProfileUserContext';
 import '../../css/Profile.css';
+import { __ProfileInfo } from '../../helpers/__ProfileInfo';
 import ProfileInfo from './ProfileInfo';
 
 const Profile = ({ setShowEdit }) => {
-  const { userInfo } = useContext(ProfileUserContext);
+  const { userInfo, setUserInfo } = useContext(ProfileUserContext);
+  const { user } = useContext(AuthContext);
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      let resp = await __ProfileInfo(user.email);
+      console.log(resp);
+      setUserInfo(resp.data);
+    };
+    fetchProfile();
+  }, []);
 
   return (
     <section className="profile-section row">
@@ -17,7 +29,7 @@ const Profile = ({ setShowEdit }) => {
 
       <div className="profile-info col-12 col-sm-6 mt-3 mt-sm-0">
         <h4>Mi información</h4>
-        <ProfileInfo tag="Documento" data={userInfo.id} />
+        <ProfileInfo tag="Documento" data={userInfo._id} />
         <ProfileInfo tag="Nombre(s)" data={userInfo.nombre} />
         <ProfileInfo tag="Apellido(s)" data={userInfo.apellido} />
         <ProfileInfo tag="Email" data={userInfo.email} />

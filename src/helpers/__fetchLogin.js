@@ -4,7 +4,7 @@ import env from '../constants/apiConst';
  * PETICION PARA INICIAR SESION
  */
 
-export const getUser = async (email, password) => {
+export const __fetchLogin = async (email, password) => {
   let options = {
     method: 'POST',
     headers: {
@@ -13,7 +13,7 @@ export const getUser = async (email, password) => {
     body: JSON.stringify({ email: email, password: password }),
   };
 
-  let data = fetch(env.__LOGIN, options).then((res) => res);
+  let data = await fetch(env.__LOGIN, options);
 
   return data;
 };
