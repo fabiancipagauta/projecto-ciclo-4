@@ -12,6 +12,8 @@ import PermisosPage from '../views/PermisosPage';
 import Page404 from '../views/Page404';
 
 import '../css/PsnRoutes.css';
+import GestionUsuariosPage from '../views/GestionUsuariosPage';
+import { AdminRoutes } from './AdminRoutes';
 
 const PsnRoutes = () => {
   return (
@@ -26,6 +28,14 @@ const PsnRoutes = () => {
           <Route path="/pagos" element={<PagosPage />} />
           <Route path="/certificado" element={<CertificadoPage />} />
           <Route path="/permisos" element={<PermisosPage />} />
+          <Route
+            path="/gestion-usuarios"
+            element={
+              <AdminRoutes>
+                <GestionUsuariosPage />
+              </AdminRoutes>
+            }
+          />
 
           <Route path="*" element={<Page404 />} />
         </Routes>

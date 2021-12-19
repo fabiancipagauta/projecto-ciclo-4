@@ -37,7 +37,7 @@ export const adminLinksElements = [
   {
     id: 'admin-link-01',
     img: adminSectionMenu.gestionUsuario,
-    path: '/',
+    path: 'gestion-usuarios',
     title: 'Gestion usuarios',
   },
   {

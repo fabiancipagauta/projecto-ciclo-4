@@ -8,9 +8,7 @@ import PagosForm from '../components/pagos/PagosForm';
 const PagosPage = () => {
   return (
     <div>
-      <HeaderMain sectionTitle="Reporte de Pagos">
-        <h4>Botones opcionales</h4>
-      </HeaderMain>
+      <HeaderMain sectionTitle="Reporte de Pagos"></HeaderMain>
       <MainContainer>
         <SectionDescription>
           Solicita tu reporte de pago seleccionando la fecha a consultar
