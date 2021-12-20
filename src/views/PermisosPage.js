@@ -1,6 +1,7 @@
 import React from 'react';
 import HeaderMain from '../components/container/HeaderMain';
 import MainContainer from '../components/container/MainContainer';
+import PeticionPermisos from '../components/permisos/PeticionPermisos';
 
 const PermisosPage = () => {
   return (
@@ -8,7 +9,9 @@ const PermisosPage = () => {
       <HeaderMain sectionTitle="Solicitud de Permisos">
         <h4>Solicitud de Permisos</h4>
       </HeaderMain>
-      <MainContainer>{/**Insertar componente para esta seccion */}</MainContainer>
+      <MainContainer>
+        <PeticionPermisos />
+      </MainContainer>
     </div>
   );
 };

@@ -66,14 +66,24 @@ const PagosForm = () => {
         )}
       </ModalComponent>
       <form action="">
-        <select name="periodo" id="" value={form.periodo} onChange={handleInputChange}>
-          <option value="">---Seleccionar---</option>
-          {values.map((p) => (
-            <option key={p[0]} value={p[0]}>
-              {p[0]}
-            </option>
-          ))}
-        </select>
+        <div className="row justify-content-center">
+          <div className="mb-3 col-4">
+            <select
+              name="periodo"
+              id=""
+              value={form.periodo}
+              onChange={handleInputChange}
+              className="form-select"
+            >
+              <option value="">---Seleccionar---</option>
+              {values.map((p) => (
+                <option key={p[0]} value={p[0]}>
+                  {p[0]}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
         <input type="button" value="Aceptar" className="btn btn-primary" onClick={handleSubmit} />
       </form>
     </>

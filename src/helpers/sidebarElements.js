@@ -23,7 +23,7 @@ export const sidebarLinkElements = [
     id: 'sidebar-id-04',
     img: sidebarIMG.certificados,
     path: 'certificado',
-    title: 'Certificado',
+    title: 'Certificado Laboral',
   },
   {
     id: 'sidebar-id-05',
@@ -43,7 +43,7 @@ export const adminLinksElements = [
   {
     id: 'admin-link-02',
     img: adminSectionMenu.gestionPermisos,
-    path: '/',
+    path: 'gestion-permisos',
     title: 'Gestion permisos',
   },
   {
@@ -60,6 +60,12 @@ export const adminLinksElements = [
   },
   {
     id: 'admin-link-05',
+    img: adminSectionMenu.reportes,
+    path: 'gestion-pagos',
+    title: 'Gestion Pagos',
+  },
+  {
+    id: 'admin-link-06',
     img: adminSectionMenu.dashboard,
     path: '/',
     title: 'Dashboard',
