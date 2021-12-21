@@ -22,6 +22,11 @@ const enviroment = {
   __LICENSE_REQUEST: `${URL_BASE}/license/license_request`,
   __LICENSE_LIST: `${URL_BASE}/license/license_list`,
   __LICENSE_EDIT: `${URL_BASE}/license/license_edit`,
+
+  /***********************VACACIONES************************ */
+  __VACATIONS_REQUEST: `${URL_BASE}/vacations/vacations_request`,
+  __VACATIONS_LIST: `${URL_BASE}/vacations/vacations_list`,
+  __VACATIONS_EDIT: `${URL_BASE}/vacations/vacations_edit`,
 };
 
 export default enviroment;

@@ -49,7 +49,7 @@ export const adminLinksElements = [
   {
     id: 'admin-link-03',
     img: adminSectionMenu.gestionVacaciones,
-    path: '/',
+    path: 'gestion-vacaciones',
     title: 'Gestion vacaciones',
   },
   {

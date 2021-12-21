@@ -21,8 +21,8 @@ const GestionPermisosForm = ({ openModal, data, setInfoPermiso }) => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
-            <tr key={item.id_usuario}>
+          {data.map((item, index) => (
+            <tr key={`${item.id_usuario}-${index}`}>
               <td>{item.fecha_inicio}</td>
               <td>{item.tipo_permisos}</td>
               <td>{item.id_usuario}</td>

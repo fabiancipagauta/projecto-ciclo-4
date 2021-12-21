@@ -16,6 +16,7 @@ import GestionUsuariosPage from '../views/GestionUsuariosPage';
 import { AdminRoutes } from './AdminRoutes';
 import GestionPagosPage from '../views/GestionPagosPage';
 import GestionPermisosPage from '../views/GestionPermisosPage';
+import GestionVacacionesPage from '../views/GestionVacacionesPage';
 
 const PsnRoutes = () => {
   return (
@@ -53,6 +54,15 @@ const PsnRoutes = () => {
             element={
               <AdminRoutes>
                 <GestionPermisosPage />
+              </AdminRoutes>
+            }
+          />
+
+          <Route
+            path="/gestion-vacaciones"
+            element={
+              <AdminRoutes>
+                <GestionVacacionesPage />
               </AdminRoutes>
             }
           />
