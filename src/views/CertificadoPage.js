@@ -15,7 +15,7 @@ const CertificadoPage = () => {
     const req = async () => {
       try {
         let res = await __userJobCertificate(user.id);
-        console.log(res);
+
         if (res.status === 'ok') {
           setCertificado(res.data);
         }

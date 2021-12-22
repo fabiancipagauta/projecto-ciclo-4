@@ -4,27 +4,27 @@ import { useModal } from '../../hooks/useModal';
 import InputDate from '../commons/InputDate';
 import ModalComponent from '../commons/ModalComponent';
 
-const VacationsForm = () => {
+const VacationsForm = ({ createVacation, isOpenRequest, openModalRequest, closeModalRequest }) => {
   const initialForm = {
-    date_from: '',
-    date_to: '',
+    fecha_inicio: '',
+    fecha_fin: '',
   };
 
   const [isOpenControlRequest, openModalControlRequest, closeModalControlRequest] = useModal(false);
-  const [isOpenRequest, openModalRequest, closeModalRequest] = useModal(false);
+
   const [form, handleInputChange] = useForm(initialForm);
 
   const handleRequestModal = () => {
-    const { date_from, date_to } = form;
-    if (!date_from.trim() || !date_to.trim()) {
+    const { fecha_inicio, fecha_fin } = form;
+    if (!fecha_inicio || !fecha_fin) {
       openModalControlRequest();
       return;
     }
     openModalRequest();
   };
 
-  const sendVacationRequest = () => {
-    console.log(form.date_from, form.date_to);
+  const handleAccept = (e) => {
+    createVacation(form);
   };
 
   return (
@@ -34,7 +34,8 @@ const VacationsForm = () => {
       </ModalComponent>
       <ModalComponent isOpen={isOpenRequest} closeModal={closeModalRequest}>
         <div>
-          <button className="btn btn-success" onClick={sendVacationRequest}>
+          <p>¿Enviar solicitud?</p>
+          <button className="btn btn-success" onClick={handleAccept}>
             Aceptar
           </button>
           <button className="btn btn-danger ms-3" onClick={closeModalRequest}>
@@ -43,29 +44,29 @@ const VacationsForm = () => {
         </div>
       </ModalComponent>
       <form>
-        <InputDate
-          inputName={'date_from'}
-          inputId={'date_from'}
-          inputLabel={'Desde'}
-          inputClass={''}
-          onChange={handleInputChange}
-          value={form.date_from}
-        />
-        <span></span>
-        <InputDate
-          inputName={'date_to'}
-          inputId={'date_to'}
-          inputLabel={'Hasta'}
-          inputClass={''}
-          onChange={handleInputChange}
-          value={form.date_to}
-        />
-        <input
-          type="button"
-          value="Aceptar"
-          onClick={handleRequestModal}
-          className="btn btn-primary"
-        />
+        <div className="row">
+          <InputDate
+            inputName={'fecha_inicio'}
+            inputId={'date_from'}
+            inputLabel={'Desde'}
+            inputClass={'form-control'}
+            onChange={handleInputChange}
+            value={form.date_from}
+            cl="col"
+          />
+          <InputDate
+            inputName={'fecha_fin'}
+            inputId={'date_to'}
+            inputLabel={'Hasta'}
+            inputClass={'form-control'}
+            onChange={handleInputChange}
+            value={form.date_to}
+            cl="col"
+          />
+        </div>
+        <button type="button" onClick={handleRequestModal} className="btn btn-primary my-5">
+          Aceptar
+        </button>
       </form>
     </>
   );

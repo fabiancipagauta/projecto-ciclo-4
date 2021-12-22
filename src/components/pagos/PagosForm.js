@@ -4,7 +4,7 @@ import { __ListPayment } from '../../helpers/__ListPayment';
 import { __requestPayment } from '../../helpers/__requestPayment';
 import useForm from '../../hooks/useForm';
 import { useModal } from '../../hooks/useModal';
-import InputDate from '../commons/InputDate';
+
 import ModalComponent from '../commons/ModalComponent';
 
 const PagosForm = () => {
@@ -14,7 +14,8 @@ const PagosForm = () => {
   const [values, setValues] = useState([]);
   const { user } = useContext(AuthContext);
   const [isOpen, openModal, closeModal] = useModal();
-  const [certificado, setCertificado] = useState({});
+  const [certificado, setCertificado] = useState(initialForm);
+  // const [certificado, setCertificado] = useState({});
 
   const [form, handleInputChange] = useForm();
 
@@ -30,7 +31,6 @@ const PagosForm = () => {
   }, []);
 
   const handleSubmit = async (e) => {
-    console.log(user);
     if (!form.periodo) {
       alert('La fecha es requerida');
       return;

@@ -24,7 +24,6 @@ const GestionPermisosPage = () => {
         if (res.estado === 'ok') {
           setDataList(res.data);
         }
-        console.log(res.data);
       } catch (error) {
         console.log(error);
       }
@@ -39,7 +38,6 @@ const GestionPermisosPage = () => {
         if (res.estado === 'ok') {
           setDataList(res.data);
         }
-        console.log(res.data);
       } catch (error) {
         console.log(error);
       }
@@ -63,7 +61,6 @@ const GestionPermisosPage = () => {
     } catch (error) {
       console.log(error);
     }
-    console.log(body);
   };
 
   const editLicenseBad = async (body) => {
@@ -82,7 +79,6 @@ const GestionPermisosPage = () => {
     } catch (error) {
       console.log(error);
     }
-    console.log(body);
   };
 
   return (

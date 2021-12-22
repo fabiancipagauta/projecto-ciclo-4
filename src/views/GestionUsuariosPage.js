@@ -21,7 +21,7 @@ const GestionUsuariosPage = () => {
   useEffect(() => {
     const list = async () => {
       let res = await __userList();
-      console.log(res);
+
       setDataList(res.data);
     };
     list();
@@ -30,7 +30,6 @@ const GestionUsuariosPage = () => {
   useEffect(() => {
     const list = async () => {
       let res = await __userList();
-      console.log(res);
       setDataList(res.data);
     };
     list();

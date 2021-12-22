@@ -23,7 +23,6 @@ const GestionVacacionesPage = () => {
         if (res.estado === 'ok') {
           setDataList(res.data);
         }
-        console.log(res.data);
       } catch (error) {
         console.log(error);
       }
@@ -38,7 +37,6 @@ const GestionVacacionesPage = () => {
         if (res.estado === 'ok') {
           setDataList(res.data);
         }
-        console.log(res.data);
       } catch (error) {
         console.log(error);
       }
@@ -62,7 +60,6 @@ const GestionVacacionesPage = () => {
     } catch (error) {
       console.log(error);
     }
-    console.log(body);
   };
 
   const editVacationBad = async (body) => {
@@ -81,7 +78,6 @@ const GestionVacacionesPage = () => {
     } catch (error) {
       console.log(error);
     }
-    console.log(body);
   };
 
   return (

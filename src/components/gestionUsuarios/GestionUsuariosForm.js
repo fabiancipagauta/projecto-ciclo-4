@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import useForm from '../../hooks/useForm';
 
 const GestionUsuariosForm = ({ dataEdit, setDataEdit, editUser, createUser }) => {
@@ -16,7 +16,7 @@ const GestionUsuariosForm = ({ dataEdit, setDataEdit, editUser, createUser }) =>
     password: '',
   };
 
-  const [form, handleInputChange, resetForm, setForm] = useForm(initialForm);
+  const [form, handleInputChange, setForm] = useForm(initialForm);
 
   useEffect(() => {
     if (dataEdit) {

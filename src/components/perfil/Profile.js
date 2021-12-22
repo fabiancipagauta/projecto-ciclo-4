@@ -13,7 +13,7 @@ const Profile = ({ setShowEdit }) => {
   useEffect(() => {
     const fetchProfile = async () => {
       let resp = await __ProfileInfo(user.email);
-      console.log(resp);
+
       setUserInfo(resp.data);
     };
     fetchProfile();

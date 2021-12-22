@@ -1,8 +1,8 @@
 import React from 'react';
 
-const InputDate = ({ inputName, inputId, inputLabel, inputClass, value, onChange }) => {
+const InputDate = ({ inputName, inputId, inputLabel, inputClass, value, onChange, cl = '' }) => {
   return (
-    <div>
+    <div className={cl}>
       <label htmlFor={inputId}>{inputLabel}</label>
       <input
         type="date"

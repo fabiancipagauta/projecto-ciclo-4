@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import useForm from '../../hooks/useForm';
 
 const PeticionPermisos = ({ createLicense }) => {
@@ -8,7 +8,7 @@ const PeticionPermisos = ({ createLicense }) => {
     tipo_permisos: '',
   };
 
-  const [form, handleInputChange, resetForm] = useForm(initialForm);
+  const [form, handleInputChange] = useForm(initialForm);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
